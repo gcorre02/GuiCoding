@@ -1,1 +1,96 @@
 println "Optimus Prime"
+println "Give me a number"
+String str = System.console().readLine()
+int userInput = Integer.parseInt(str)
+int prime=0, pos, neg
+int checkInput = userInput
+while(prime==0)
+{
+	boolean finished = false
+
+	//this tells you if it's a prime or not
+	int counter =0
+	int current = 1
+	while(!finished)
+	{
+		if(checkInput%current==0)
+		{
+			counter++
+		}
+		if(counter>=3 || current>checkInput)
+		{
+			finished = true
+		}	
+		current++
+
+	}	
+	if(counter==2)
+	{
+		prime++
+		pos = checkInput
+	}
+	else
+	{
+		println"issnota Prime…"
+		checkInput = checkInput + 1
+	}
+	//until here
+	
+	
+}
+prime = 0
+checkInput = userInput
+while(prime==0)
+{
+	boolean finished = false
+
+	//this tells you if it's a prime or not
+	int counter =0
+	int current = 1
+	while(!finished)
+	{
+		if(checkInput%current==0)
+		{
+			counter++
+		}
+		if(counter>=3 || current>checkInput)
+		{
+			finished = true
+		}	
+		current++
+
+	}	
+	if(counter==2)
+	{
+		prime++
+		neg = checkInput
+	}
+	else
+	{
+		println"issnota Prime…"
+		checkInput = checkInput - 1
+	}
+	//until here
+	
+	
+}
+
+//verify which distance is smaller, pos or neg, and print accordingly
+
+if((pos-userInput)>(-neg+userInput))
+{
+	println"issa Prime!"
+	println pos + " is the one and it is " + (pos - userInput) + " above " + userInput
+
+}
+else if((pos-userInput)<(-neg+userInput))
+{
+	println"issa Prime!"
+	println neg + " is the one and it is " + (-neg + userInput) + " under " + userInput
+
+}
+else
+{
+	println"issa Prime!"
+	println pos + " and "+ neg + " are both the ones and are " + (pos - userInput) + " away from " + userInput
+}
